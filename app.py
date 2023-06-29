@@ -28,7 +28,7 @@ def generate_html_download_link(fig):
 
 st.set_page_config(page_title='Excel Plotter')
 st.title('Example Excel Input - Linkalab 📈')
-st.subheader('Feed me with your Excel file')
+st.subheader('Inserisci qua il tuo file Excel')
 
 uploaded_file = st.file_uploader('Choose a XLSX file', type='xlsx')
 if uploaded_file:
@@ -36,7 +36,7 @@ if uploaded_file:
     df = pd.read_excel(uploaded_file, engine='openpyxl')
     st.dataframe(df)
     groupby_column = st.selectbox(
-        'What would you like to analyse?',
+        'Cosa vorresti analizzare?',
         ('Ship Mode', 'Segment', 'Category', 'Sub-Category'),
     )
 
