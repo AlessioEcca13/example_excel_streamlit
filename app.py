@@ -3,7 +3,8 @@ import pandas as pd  # pip install pandas
 import plotly.express as px  # pip install plotly-express
 import base64  # Standard Python Module
 from io import StringIO, BytesIO  # Standard Python Module
-
+import numpy as np
+np.bool = np.bool_
 
 def generate_excel_download_link(df):
     # Credit Excel: https://discuss.streamlit.io/t/how-to-add-a-download-excel-csv-function-to-a-button/4474/5
