@@ -13,7 +13,7 @@ def generate_excel_download_link(df):
     df.to_excel(towrite, index=False, header=True)  # write to BytesIO buffer
     towrite.seek(0)  # reset pointer
     b64 = base64.b64encode(towrite.read()).decode()
-    href = f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="data_download.xlsx">Download Excel File</a>'
+    href = f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="data_download.xlsx">Scarica il report in Excel</a>'
     return st.markdown(href, unsafe_allow_html=True)
 
 def generate_html_download_link(fig):
@@ -22,7 +22,7 @@ def generate_html_download_link(fig):
     fig.write_html(towrite, include_plotlyjs="cdn")
     towrite = BytesIO(towrite.getvalue().encode())
     b64 = base64.b64encode(towrite.read()).decode()
-    href = f'<a href="data:text/html;charset=utf-8;base64, {b64}" download="plot.html">Download Plot</a>'
+    href = f'<a href="data:text/html;charset=utf-8;base64, {b64}" download="plot.html">Scarica il grafico</a>'
     return st.markdown(href, unsafe_allow_html=True)
 
 
